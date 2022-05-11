@@ -1,9 +1,23 @@
 import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {
+  createNativeStackNavigator,
+  NativeStackNavigationProp,
+} from '@react-navigation/native-stack';
 import HomeScreen from '../screens/HomeScreen';
 import DetailScreen from '../screens/DetailScreen';
+import {Movie} from '../interfaces/movieInterface';
 
-const Stack = createNativeStackNavigator();
+export type RootStackParams = {
+  HomeScreen: undefined;
+  DetailScreen: Movie;
+};
+
+export type DetailScreenNavigationProp = NativeStackNavigationProp<
+  RootStackParams,
+  'DetailScreen'
+>;
+
+const Stack = createNativeStackNavigator<RootStackParams>();
 
 export default function Navigation() {
   return (
