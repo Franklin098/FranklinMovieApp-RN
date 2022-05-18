@@ -10,7 +10,7 @@ export default function FadeScreen() {
       <Animated.View
         style={{...styles.subContainer, opacity: opacity}}></Animated.View>
       <Button title="Fade In" onPress={() => fadeIn()} />
-      <Button title="Fade Out" onPress={fadeOut} />
+      <Button title="Fade Out" onPress={() => fadeOut()} />
     </View>
   );
 }
